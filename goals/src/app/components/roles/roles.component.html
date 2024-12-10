@@ -1,0 +1,46 @@
+<p>roles works!</p>
+<div class="row">
+    <div class="col-3">
+        <p>{{ firstname }}</p>
+    </div>
+    <div class="col-3">
+        <p>{{ angularVersion }}</p>
+    </div>
+    <div class="col-3">
+        <p>{{ currentDate }}</p>
+    </div>
+    <div class="col-3">
+        <p>{{selectedState}}</p>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-3">
+        <input type="text" [value]="firstname" class="form-control/">
+    </div>
+    <div class="col-3">
+        <input type="text" [(ngModel)]="firstname"/>
+    </div>
+    <div class="col-3">
+        <input [type]="inputType">
+    </div>
+    <div class="col-3">
+        <select [(ngModel)]="selectedState">
+            <option value="ABUJA">Abuja</option>
+            <option value="LAGOS">LAGOS</option>
+            <option value="BENIN">Benin</option>
+        </select>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showWelcomeAlert()">Click Me</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showMessage('Welcome Prince')">Click Me</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showMessage('Howdy Partner')">Click Me</button>
+    </div>
+</div>
