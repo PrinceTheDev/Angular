@@ -11,26 +11,27 @@ import { FormsModule } from '@angular/forms';
 export class RolesComponent {
   //string, number, date, boolean, array, object, null, undefined
 
-  firstname: string = "Angular Tutorial";
-  angularVersion = "Version 18";
+  // firstname: string = "Angular Tutorial";
+  // angularVersion = "Version 18";
 
-  version: number = 18;
+  // version: number = 18;
 
-  isActive: boolean = false;
+  // isActive: boolean = false;
 
-  currentDate : Date = new Date();
+  // currentDate : Date = new Date();
 
-  inputType: string = "button";
-  selectedState: string = "";
+  // inputType: string = "button";
+  // selectedState: string = "";
 
 
-  showWelcomeAlert () {
-    alert("Welcome to Goals App")
-  }
-  showMessage(message: string) {
-    alert(message)
-  }
+  // showWelcomeAlert () {
+  //   alert("Welcome to Goals App")
+  // }
+  // showMessage(message: string) {
+  //   alert(message)
+  // }
 
+  
 
 
 }
