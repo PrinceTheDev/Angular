@@ -6,7 +6,7 @@ import { DesignationComponent } from '../designation/designation.component';
 @Component({
   selector: 'app-master',
   standalone: true,
-  imports: [RolesComponent, CommonModule, DesignationComponent],
+  imports: [RolesComponent,CommonModule,DesignationComponent],
   templateUrl: './master.component.html',
   styleUrl: './master.component.css'
 })
