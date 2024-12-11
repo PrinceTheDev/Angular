@@ -21,7 +21,7 @@ ngOnInit(): void {
 }
 
 getAllRoles() {
-  this.http.get<APIResponseModel>("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles").subscribe((res:APIResponseModel) => {
+  this.http.get<APIResponseModel>("/api/ClientStrive/GetAllRoles").subscribe((res:APIResponseModel) => {
     this.roleList = res.data;
   })
 }
