@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IRole } from '../master/interface/role';
 import { CommonModule } from '@angular/common';
+import { APIResponseModel, IRole } from '../../model/interface/role';
 
 @Component({
   selector: 'app-roles',
@@ -21,9 +21,9 @@ ngOnInit(): void {
 }
 
 getAllRoles() {
-  this.http.get("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles").subscribe((res:any) => {
+  this.http.get<APIResponseModel>("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles").subscribe((res:APIResponseModel) => {
     this.roleList = res.data;
-  });
+  })
 }
 
 
