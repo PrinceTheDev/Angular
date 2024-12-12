@@ -23,15 +23,15 @@ export class ClientComponent implements OnInit {
   }
 
   loadClient() {
-    this.clientService.getAllClients().subscribe((res:APIResponseModel)=>{
+    this.clientService.getAllClients().subscribe((res: APIResponseModel) => {
       this.clientList = res.data;
     })
   }
 
   onSaveClient() {
     debugger;
-    this.clientService.addUpdate(this.clientObj).subscribe((res:APIResponseModel)=>{
-      if(res.result) {
+    this.clientService.addUpdate(this.clientObj).subscribe((res: APIResponseModel) => {
+      if (res.result) {
         alert("Client Create Success");
         this.loadClient();
         this.clientObj = new Client();
@@ -41,4 +41,22 @@ export class ClientComponent implements OnInit {
     })
   }
 
+  onEdit(data: Client) {
+    this.clientObj = data;
+
+  }
+
+  onDelete(id: number) {
+    const isDelete = confirm("Are you sure you want to delete");
+    if (isDelete) {
+      this.clientService.deleteClientById(id).subscribe((res: APIResponseModel) => {
+        if (res.result) {
+          alert("Client Deleted Success");
+          this.loadClient();
+        } else {
+          alert(res.message)
+        }
+      })
+    }
+  }
 }

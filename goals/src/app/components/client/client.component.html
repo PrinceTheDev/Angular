@@ -27,8 +27,8 @@
                                     <td>{{item.contactNo}}</td>
                                     <td>{{item.city}}</td>
                                     <td>
-                                        <button class="btn btn-primary edit">Edit</button>
-                                        <button class="btn btn-danger delete">Delete</button>
+                                        <button class="btn btn-primary edit" (click)="onEdit(item)">Edit</button>
+                                        <button class="btn btn-danger delete" (click)="onDelete(item.clientId)">Delete</button>
                                     </td>
                                 </tr>
                              }
@@ -49,7 +49,7 @@
                 <div class="row">
                     <div class="col-6">
                         <label for="">Person Name</label>
-                        <input type="text" [(ngModel)]="clientObj.contactPersonName" class="form-control">
+                        <input type="text" #personName="ngModel=" [(ngModel)]="clientObj.contactPersonName" class="form-control">
                     </div>
                     <div class="col-6">
                         <label for="">Company Name</label>
@@ -90,7 +90,9 @@
             </div>
                     <div class="row pt-2">
                         <div class="col-6 text-center">
-                            <button class="btn btn-success" (click)="onSaveClient()">Save Client</button>
+                            <button class="btn btn-success" (click)="onSaveClient()">
+                                {{clientObj.clientId != 0 ? 'Update Client':'Save Client' }}
+                                Save Client</button>
                         </div>
                         <div class="col-6 text-centre">
                             <button class="btn btn-secondary">Reset</button>
