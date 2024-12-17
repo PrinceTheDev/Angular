@@ -1,8 +1,13 @@
+<app-alert></app-alert>
+
 <div class="row top-row">
     <div class="col-8">
         <div class="card">
             <div class="card-header bg-success">
-                Client List
+                Client List -{{firstName()}}
+                <button class="btn btn-danger" (click)="changeFName()">
+                    Change F Name
+                </button>
             </div>
             <div class="card-body">
                 <div class="row">
@@ -19,16 +24,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @for (item of projectList(); track $index) {
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{$index+1}}</td>
+                                    <td>{{item.clientName}}</td>
+                                    <td>{{item.projectName}}</td>
+                                    <td>{{item.empName}}</td>
+                                    <td>{{item.startDate | date:'dd-MMM-yyyy'}}</td>
                                     <td>
-                                        
+                                        <button class="btn btn-primary">Edit</button>
+                                        <button class="btn btn-danger">Delete</button>
                                     </td>
                                 </tr>
+                            }
                             </tbody>
                         </table>
                     </div>
