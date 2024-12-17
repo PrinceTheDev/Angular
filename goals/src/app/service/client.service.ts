@@ -21,4 +21,14 @@ export class ClientService {
   deleteClientById (id:number):Observable<APIResponseModel> {
     return this.http.delete<APIResponseModel>(environment.API_URL + "DeleteClientByClientId?clientId="+id)
   }
+  getAllEmployee():Observable<APIResponseModel> {
+    return this.http.get<APIResponseModel>(environment.API_URL + "GetAllEmployee")
+  }
+  addClientProjectUpdate (obj:Client):Observable<APIResponseModel> {
+    return this.http.post<APIResponseModel>(environment.API_URL + "AddUpdateClientProject",obj)
+  }
+
+  getAllUser() {
+    return this.http.get("https://jsonplaceholder.typicode.com/users")
+  }
 }
