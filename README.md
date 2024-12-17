@@ -1,2 +1,3 @@
 # Angular
-First projects using Angular while learning
+## DESCRIPTION
+This project contains personal projects done while learning and mastering Angular framework.
